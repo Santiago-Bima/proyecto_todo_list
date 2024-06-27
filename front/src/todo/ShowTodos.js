@@ -41,7 +41,7 @@ const CompShowTodos = () => {
                   <td>{todo.titulo}</td>
                   <td>{todo.contenido}</td>
                   <td>
-                    <Link to={`/edit/${todo.id}`} className='btn btn-info'><i className='fas fa-edit'></i></Link>
+                    <Link to={`/editar/${todo.id}`} className='btn btn-info'><i className='fas fa-edit'></i></Link>
                     <button onClick={()=>{deleteTodo(todo.id)}} className='btn btn-danger'><i className='fas fa-trash'></i></button>
                   </td>
                 </tr>
