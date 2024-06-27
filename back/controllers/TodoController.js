@@ -14,7 +14,7 @@ export const getTodo = async (req, res) => {
     const todo = await TodoModel.findAll({
       where:{ id:req.params.id }
     })
-    res.json(todo)
+    res.json(todo[0])
   } catch (error) {
     res.json({message: error.message})
   }
@@ -31,7 +31,7 @@ export const createTodo = async (req,res) => {
   }
 }
 
-export const updateTodo = async (res,req) => {
+export const updateTodo = async (req,res) => {
   try {
     await TodoModel.update(req.body, {
       where: { id: req.params.id }
