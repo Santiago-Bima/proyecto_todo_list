@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-const URL = 'https://localhost:8000/todos/'
+const URL = 'http://localhost:8000/todos/'
 
 const CompShowTodos = () => {
   const [todos, setTodo] = useState([])
@@ -26,6 +26,7 @@ const CompShowTodos = () => {
     <div className='container'>
       <div className='row'>
         <div className='col'>
+          <Link to='/crear' className='btn btn-primary mt-2 mb-2'><i className='fas fa-plus'></i></Link>
           <table className='table'>
             <thead className='table-primary'>
               <tr>
@@ -35,16 +36,16 @@ const CompShowTodos = () => {
               </tr>
             </thead>
             <tbody>
-              { todos.map(todo => {
+              { todos.map((todo) => (
                 <tr key={todo.id}>
                   <td>{todo.titulo}</td>
                   <td>{todo.contenido}</td>
                   <td>
-                    <Link to={`/edit/${todo.id}`} className='btn btn-info'>Editar</Link>
-                    <button onClick={()=>{deleteTodo(todo.id)}} className='btn btn-danger'>Eliminar</button>
+                    <Link to={`/edit/${todo.id}`} className='btn btn-info'><i className='fas fa-edit'></i></Link>
+                    <button onClick={()=>{deleteTodo(todo.id)}} className='btn btn-danger'><i className='fas fa-trash'></i></button>
                   </td>
                 </tr>
-              }) }
+              )) }
             </tbody>
           </table>
         </div>
