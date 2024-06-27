@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize'
 
-const db = Sequelize('todoListDb', 'root', '', {
+const db = new Sequelize('todoListDb', 'root', '', {
   host: 'localhost',
   dialect: 'mysql'
 })
