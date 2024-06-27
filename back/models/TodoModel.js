@@ -2,8 +2,8 @@ import db from '../database/db.js'
 import { DataTypes } from 'sequelize'
 
 const TodoModel = db.define('todos', {
-  title: { type: DataTypes.STRING },
-  content: { type: DataTypes.STRING }
+  titulo: { type: DataTypes.STRING },
+  contenido: { type: DataTypes.STRING }
 })
 
 
